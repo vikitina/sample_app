@@ -6,7 +6,10 @@ gem 'rails', '4.0.2'
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'rspec-rails', '2.13.1'
+  gem 'rspec-rails', :group => [:test, :development]
+group :test do
+  gem 'database_cleaner'
+end
 end
 
 group :test do
@@ -29,3 +32,4 @@ group :production do
   gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
 end
+
